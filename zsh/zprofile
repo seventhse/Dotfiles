@@ -1,0 +1,9 @@
+# Homebrew
+
+if command -v brew >/dev/null 2>&1; then
+  eval "$(brew shellenv)"
+fi
+
+# PATH 扩展
+
+export PATH="$HOME/bin:$PATH"

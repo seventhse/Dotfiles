@@ -1,0 +1,25 @@
+zreload() {
+  echo "🔄 reloading zsh..."
+
+  local rc="$HOME/.zshrc"
+
+  if [[ -d "$ZSH_CONFIG/functions" ]]; then
+    for f in "$ZSH_CONFIG/functions"/*; do
+      [[ -f "$f" ]] || continue
+      local name="${f:t}"
+      unset -f "$name" 2>/dev/null
+    done
+  fi
+
+  echo "🧹 cleaning zsh completion cache..."
+
+  rm -f "$HOME/.cache/zsh/zcompdump"* 2>/dev/null
+
+
+  # =========================
+  # 4. reload config
+  # =========================
+  source "$rc"
+
+  echo "✅ done"
+}

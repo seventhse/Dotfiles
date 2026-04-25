@@ -1,0 +1,6 @@
+[tools]
+node = "lts"
+rust = "latest"
+bun = "latest"
+pnpm = "latest"
+uv = "latest"

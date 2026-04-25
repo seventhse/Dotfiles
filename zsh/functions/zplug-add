@@ -1,0 +1,54 @@
+zplug-add() {
+  local repo="$1"
+
+  # =========================
+  # 1. 参数检查
+  # =========================
+  if [ -z "$repo" ]; then
+    echo "❌ usage: zplug-add <github-user/repo>"
+    echo "   example: zplug-add zsh-users/zsh-autosuggestions"
+    return 1
+  fi
+
+  # =========================
+  # 2. 规范 repo 格式
+  # =========================
+  if [[ "$repo" != */* ]]; then
+    echo "❌ invalid repo format"
+    echo "   expected: user/repo"
+    return 1
+  fi
+
+  local name=$(basename "$repo" .git)
+  local target="$ZSH_PLUGINS/$name"
+
+  # =========================
+  # 3. 已存在检查
+  # =========================
+  if [ -d "$target" ]; then
+    echo "⚠️ plugin already exists: $name"
+    return 0
+  fi
+
+  # =========================
+  # 4. clone
+  # =========================
+  echo "📦 installing plugin: $repo"
+
+  git clone "git@github.com:$repo.git" "$target" || {
+    echo "❌ failed to clone: $repo"
+    return 1
+  }
+
+  # =========================
+  # 5. 自动加载（兼容多种结构）
+  # =========================
+  if [ -f "$target/$name.zsh" ]; then
+    source "$target/$name.zsh"
+  elif [ -f "$target/$name.plugin.zsh" ]; then
+    source "$target/$name.plugin.zsh"
+  else
+    echo "⚠️ plugin installed but no auto-load file found"
+    echo "   manual source required: $target"
+  fi
+}

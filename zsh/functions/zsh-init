@@ -1,0 +1,4 @@
+zsh-init() {
+  zplug-add zsh-users/zsh-autosuggestions
+  zplug-add zsh-users/zsh-syntax-highlighting
+}
