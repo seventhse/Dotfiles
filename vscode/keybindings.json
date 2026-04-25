@@ -1,0 +1,119 @@
+[
+  // --- 资源管理器中对文件或目录的操作
+  // 新建文件
+  {
+    "key": "i",
+    "command": "explorer.newFile",
+    "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
+  },
+  // 新建目录
+  {
+    "key": "o",
+    "command": "explorer.newFolder",
+    "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
+  },
+  // 刷新资源管理器
+  {
+    "key": "cmd+r",
+    "command": "workbench.files.action.refreshFilesExplorer",
+    "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
+  },
+  // 重命名文件或目录
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
+  },
+  // 删除文件或目录
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
+  },
+  // 剪切文件或目录
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // 复制文件或目录
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  // 粘贴文件或目录
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  // {
+  //   "key": "shift+cmd+i",
+  //   "command": "workbench.action.tasks.build",
+  //   "when": "taskCommandsRegistered"
+  // },
+  // {
+  //   "key": "shift+cmd+b",
+  //   "command": "-workbench.action.tasks.build",
+  //   "when": "taskCommandsRegistered"
+  // },
+  // 打开最近记录
+  {
+    "key": "shift+cmd+r",
+    "command": "workbench.action.openRecent"
+  },
+  // 触发参数提示
+  // {
+  //   "key": "cmd+j",
+  //   "command": "editor.action.triggerParameterHints",
+  //   "when": "editorHasSignatureHelpProvider && editorTextFocus"
+  // },
+  {
+    "key": "cmd+shift+t",
+    "command": "workbench.action.switchWindow"
+  },
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "cmd+shift+h",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "cmd-shift+l",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "alt+x",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
+  },
+  {
+    "key": "alt+x",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "shift+cmd+b",
+    "command": "-workbench.action.search.toggleQueryDetails",
+    "when": "inSearchEditor || searchViewletFocus"
+  },
+  {
+    "key": "shift+cmd+j",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  }
+]
