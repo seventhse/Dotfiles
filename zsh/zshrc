@@ -6,4 +6,16 @@ source $ZSH_CONFIG/functions.zsh
 source $ZSH_CONFIG/plugins.zsh
 source $ZSH_CONFIG/completion.zsh
 
+function set_win_title(){
+  local git_root
+  git_root=$(git rev-parse --show-toplevel 2>/dev/null)
+  if [[ -n "$git_root" ]]; then
+    local repo_name
+    repo_name=$(basename "$git_root")
+    echo -ne "\033]0;$repo_name\007"
+  else
+    echo -ne "\033]0;$(basename "$PWD")\007"
+  fi
+}
+precmd_functions+=(set_win_title)
 eval "$(starship init zsh)"
