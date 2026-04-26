@@ -466,9 +466,8 @@
   // Features
   "js/ts.updateImportsOnFileMove.enabled": "always",
   "security.promptForRemoteFileProtocolHandling": false,
-  // Theme
-  "window.commandCenter": false,
   "window.titleBarStyle": "custom",
+  "window.menuStyle": "custom",
   "window.nativeTabs": false,
   "window.autoDetectColorScheme": true,
   "workbench.activityBar.iconClickBehavior": "toggle",
@@ -493,4 +492,6 @@
 
   // AI
   "chat.disableAIFeatures": true,
+  "workbench.navigationControl.enabled": false,
+  "window.commandCenter": false,
 }
