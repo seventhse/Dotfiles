@@ -36,7 +36,7 @@
     "**/pnpm-lock.yaml": true,
     "**/tmp": true,
     "**/yarn.lock": true,
-    "**/target": true
+    "**/target": true,
   },
   // FileNesting
   "explorer.fileNesting.enabled": true,
@@ -152,7 +152,6 @@
   "vim.foldfix": true,
   "vim.leader": "<space>",
   "vim.smartRelativeLine": true,
-  "editor.lineNumbers": "relative",
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false
@@ -329,12 +328,13 @@
         "editor.action.moveLinesDownAction"
       ],
       "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+      "before": ["f","g"],
+      "commands": ["editor.action.addSelectionToNextFindMatch"],
+      "when": "editorFocus"
     }
   ],
-  // License
-  "license.author": "Seventhse",
-  "license.year": "auto",
-  "license.default": "mit",
   // Git
   "git.autorefresh": false,
   "git.confirmSync": false,
@@ -342,12 +342,8 @@
   "git.replaceTagsWhenPull": true,
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1,
-    "asvetliakov.vscode-neovim": 1
   },
   // Terminal
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1",
-  },
   "terminal.integrated.fontSize": 15,
   // Debug
   "debug.console.fontSize": 15,
@@ -363,7 +359,8 @@
     "typescriptreact",
     "html",
     "vue",
-    "markdown"
+    "markdown",
+    "css"
   ],
   "eslint.validate": [
     "javascript",
@@ -383,28 +380,15 @@
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
   },
-  "apc.electron": {
-    "frame": false,
-    "titleBarStyle": "hidden",
-    "backgroundColor": "rgba(123, 123, 123, 0.5)",
-    "transparent": true,
-    "vibrancy": "ultra-dark",
-    "opacity": 0.98,
-    "visualEffectState": "active"
-  },
-  "apc.imports": [
-    "/Users/season/custom_vscode/custom_vscode_style.css",
-    "/Users/season/custom_vscode/vscode_script.js"
-  ],
   "telemetry.telemetryLevel": "off",
   "diffEditor.hideUnchangedRegions.enabled": true,
   "editor.rulers": [],
   "editor.fontSize": 14,
   "editor.tabSize": 2,
+  "editor.lineNumbers": "relative",
   "editor.fontFamily": "'0xProto',Input Mono, Monaco, 'Courier New', monospace, 'JetBrainsMono Nerd Font'",
   "editor.minimap.enabled": false,
   "editor.formatOnSave": false,
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.codeActionsOnSave": {
     "source.addMissingImports.ts": "never",
     "source.removeUnused.ts": "never",
@@ -420,28 +404,7 @@
   "explorer.openEditors.visible": 9,
   "explorer.sortOrderLexicographicOptions": "unicode",
   "explorer.compactFolders": false,
-  "explorer.autoReveal": false,
-  // Theme
-  "window.titleBarStyle": "custom",
-  "window.nativeTabs": false,
-  "window.autoDetectColorScheme": true,
-  "workbench.activityBar.iconClickBehavior": "toggle",
-  "workbench.activityBar.location": "top",
-  "workbench.iconTheme": "symbols",
-  "workbench.preferredLightColorTheme": "Vitesse Light",
-  "workbench.preferredDarkColorTheme": "Vitesse Dark",
-  "workbench.startupEditor": "none",
-  "workbench.sideBar.location": "right",
-  "workbench.colorTheme": "Vitesse Dark",
-  "workbench.editor.empty.hint": "hidden",
-  "workbench.colorCustomizations": {
-    "[Vitesse Light]": {
-      "list.focusBackground": "#f7f7f7"
-    },
-    "[Vitesse Dark]": {
-      "list.focusBackground": "#333"
-    }
-  },
+  "explorer.autoReveal": true,
   // Language format
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features",
@@ -501,9 +464,33 @@
     "editor.defaultFormatter": "sumneko.lua"
   },
   // Features
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.updateImportsOnFileMove.enabled": "always",
   "security.promptForRemoteFileProtocolHandling": false,
+  // Theme
   "window.commandCenter": false,
+  "window.titleBarStyle": "custom",
+  "window.nativeTabs": false,
+  "window.autoDetectColorScheme": true,
+  "workbench.activityBar.iconClickBehavior": "toggle",
+  "workbench.activityBar.location": "top",
+  "workbench.preferredLightColorTheme": "Vitesse Light",
+  "workbench.preferredDarkColorTheme": "Vitesse Dark",
+  "workbench.startupEditor": "none",
+  "workbench.sideBar.location": "right",
+  "workbench.colorTheme": "Vitesse Dark",
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.colorCustomizations": {
+    "[Vitesse Light]": {
+      "list.focusBackground": "#f7f7f7"
+    },
+    "[Vitesse Dark]": {
+      "list.focusBackground": "#333"
+    }
+  },
+  "workbench.activityBar.compact": false,
   "workbench.layoutControl.enabled": false,
   "workbench.browser.showInTitleBar": false,
+
+  // AI
+  "chat.disableAIFeatures": true,
 }

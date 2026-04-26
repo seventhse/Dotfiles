@@ -115,5 +115,10 @@
     "key": "shift+cmd+j",
     "command": "editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorFocus"
   }
 ]
